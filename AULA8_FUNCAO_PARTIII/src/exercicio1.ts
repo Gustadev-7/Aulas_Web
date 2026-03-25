@@ -19,8 +19,7 @@ function executarTarefas(tarefas: Tarefa[], callback: (descricao: string, indice
     tarefas.sort((a,b) => b.prioridade - a.prioridade);
     let contador = 0;
 
-    const interval = setInterval(() => {
-        if(contador >= tarefas.length || tarefas[contador]?.descricao === "Cancelar") {
+    const interval = setInterval(() => {        if(contador >= tarefas.length || tarefas[contador]?.descricao === "Cancelar") {
             clearInterval(interval);
         } else {
             const tarefa = tarefas[contador];
