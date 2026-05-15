@@ -1,11 +1,17 @@
 export class Product {
-    id: number
-    nome: string
-    preco: number
+    id: number;
+    name: string;
+    description: string;
+    price: number;
 
-    constructor(id: number, nome: string, preco: number) {
-        this.id = id;
-        this.nome = nome;
-        this.preco = preco;
+    constructor(name: string, description: string, price: number) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.id = this.geraId();
+    }
+
+    private geraId():number {
+        return Date.now();
     }
 }
